@@ -1,0 +1,175 @@
+<!DOCtype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Khoa Nguyen | Welcome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
+    <script src="./js/javascript.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Oswald" rel="stylesheet">
+</head>
+
+<!--HERE IS ANOTEHR TEST -->
+<!--Here we go again-->
+<!--What-->
+
+<body>
+    <section class="center">
+        <div id="titleHeader">
+            KHOA NGUYEN  <span class="highlight">Full Stack Developer</span>
+        </div><hr>
+
+        <div id="nav">
+            <ul>
+                <!----><li id="home"><a href="#">HOME</a></li>
+                <li id="about"><a href="#">EXPLORE</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="sectionTyp">
+        <div id="aboutMe">
+            <p>Hello! My name is Khoa Nguyen, and I am a full-stack web developer based out of San Francisco.  I design beautiful and response web pages for all types of projects and carry the developement of both front-end and back-end codebases. </p><br>
+            <p><span id="hook"> Explore Work!</span></p><br>
+        </div>
+
+    </section>
+
+    <section>
+        <div id="allIcons">
+            <ul id="icons">
+                        <li id="icon1">
+                            <figure>
+                            <a href="#"><img src="./img/design.png" alt="Portfolio"><figcaption>WORK</figcaption></a>
+                            </figure>
+                        </li>
+                        <li id="icon2">
+                            <figure>
+                            <a href="#"><img id="img2" src="./img/resume.png" alt="More About me"><figcaption>ABOUT </figcaption></a>
+                            </figure>
+                        </li>
+                        <li id="icon3">
+                            <figure>
+                            <a href="https://github.com/Khoalabear0424?tab=repositories"><img src="./img/github.png" alt="GitHub"><figcaption>GITHUB</figcaption></a>
+                            </figure>
+                        </li>
+                        <li id="icon4">
+                            <figure>
+                            <a href="#"><img src="./img/email.png" alt="Contacts"><figcaption>CONTACTS</figcaption></a>
+                            </figure>
+                        </li>
+            </ul>
+        </div>
+    </section>
+    
+    <script type="text/javascript">
+
+    $("document").ready(function() {
+        window.onload = function(){
+            $("#aboutMe").hide();
+            $("#allIcons").hide();
+        }
+
+        // ADDING / REMOVING / CHANGING ELEMENTS
+      
+        // You can change CSS attributes like this
+        // # targets ids and . targets classes
+        var animationSpeed = 600;
+
+
+        
+        function home(){
+            console.log("home")
+            $(".center").animate({
+                "width" : "500px",
+                "padding": "240px 0px 250px 0px"
+            },animationSpeed);
+
+            $("#titleHeader").animate({
+                "text-align": "center",
+                "margin" : "0px 20px 0px 30px"
+            },animationSpeed);
+
+            $("#nav").animate({
+                "margin-right" : "18.5px",
+                "padding": "0px 43px 0px 20px",
+                "width": "400"
+            },animationSpeed);
+
+            $("a").animate({
+                "padding": "6px 10px"
+            },animationSpeed);
+        }
+
+        function aboutMe(){
+                $(".center").animate({
+                    "width" : "80%",
+                    "padding" : "25px"
+                },animationSpeed);
+
+                $("#titleHeader").animate({
+                    "position": "relative",
+                    "margin-left": "0px"
+                },animationSpeed);
+
+                $("#nav").animate({
+                    "margin-right": "0px",
+                    "padding-right": "0px",
+                    "width": "160"
+                },animationSpeed);
+
+                $("a").animate({
+                    "padding": "6px 5px"
+                },animationSpeed);
+                $("#aboutMe").fadeIn(900);
+                $("#allIcons").fadeIn(1100);
+        }
+        
+        $("#home").click(function(e){
+            e.preventDefault();
+            if(window.pageYOffset>0){
+                $('html, body').animate({
+                scrollTop: (0,0)
+                }, animationSpeed);
+            return;
+            }
+
+            else{
+                home();
+            }
+            $("#aboutMe").fadeOut(400);
+            $("#allIcons").fadeOut(100);
+        });
+
+        $("#about").click(function(e){
+            e.preventDefault();
+            if(window.pageYOffset>0){
+                $('html, body').animate({
+                scrollTop: (0,0)
+                }, 300);
+                aboutMe();
+            return false;
+            }
+
+            else{
+                aboutMe();
+            }
+        });
+
+        /*$('a').click(function(){
+                $('html, body').animate({
+                scrollTop: $( $(this).attr('href') ).offset().top
+                }, 1000);
+            return false;
+        });*/
+
+    });
+</script>
+
+</body>
+</html>
