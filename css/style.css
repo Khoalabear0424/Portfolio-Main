@@ -1,23 +1,31 @@
 :root {
     --blue:#03a9f4;
     --black:#424242;
-    
-
 }
 
 body{
+    line-height: 27px;
     background-color: white;
     font-family: 'Nunito', sans-serif;
     color: #424242
 }
 
+#curtain{
+    height: 230px;
+}
+
+.noMarginLeft{  
+    margin-left: 0px;
+}
+
 #titleHeader{
     font-size: 30px;
     margin: auto;
-    text-align: center;
+    margin-left: auto;
     font-family: 'Oswald', sans-serif;
     width : 440px;
     padding: 1px 0px 0px 0px;
+    text-align: center;
 }
 
 .highlight{
@@ -27,8 +35,8 @@ body{
 
 .center{
     margin: auto;
-    width: 500px;
-    padding: 240px 0px 250px 0px;
+    min-width: 500px;
+    padding: 25px;
     background-color: white;
 }
 
@@ -36,7 +44,6 @@ body{
     width: 80%;
     margin: auto;
     float: center;
-  
 }
 
 
@@ -127,13 +134,17 @@ li a{
     -moz-border-radius: 8px;
     border-radius: 12px;
     transition: all .5s ease;
+    margin: auto;
+}
+
+#nav{
+    padding: 0;
 }
 
 figure a:hover{
     color: var(--blue);
     transition: all .3s ease;
 }
-
 
 
 .center {
@@ -145,11 +156,115 @@ figure a:hover{
 
 #aboutMe p{
     font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     margin-top: 15px;
+    max-width: 740px;
 }
 
 #hook{
     font-size: 23px;
     color: var
+}
+
+/*-----------------Extra Small -----------------*/
+@media (max-width: 576.99px) { 
+    #aboutMe p{
+        margin-top: 0;
+        /* width: 100%; */
+        padding: 0;
+        font-size: 15px;
+        min-width: 346px;
+    }
+    .center{
+        min-width: 350px;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    } 
+    #titleHeader{
+        font-size: 22px;
+        margin: auto;
+        max-width: 346px;
+    }
+    #nav a{
+        font-size: 12px;
+    }
+    #hook{
+        font-size: 20px;
+        color: var
+    }
+
+    #allIcons figure{
+        height: 50%;
+        padding: 0px 6% 0px 2%;
+    }
+    #icons{
+        margin: 0;
+        text-align: left;
+        padding-left: 30px;
+    }
+    #icon1 img{
+        min-width: 70px;
+    }
+    #icon2 img{
+        min-width: 60px;
+    }
+    #icon3 img{
+        min-width: 70px;
+    }
+    #icon4 img{
+        min-width: 10px;
+    }
+}
+
+/* -----------Small----------- */
+@media (min-width: 577px) and (max-width: 768.99px){
+    #aboutMe p{
+        margin-top: 15px;
+        min-width: 461px;
+        width: 80%;
+    }
+    .center{
+        max-width: 700px;
+        width: 80%;
+    } 
+    #icons img{
+        max-width: 60px;
+    }
+}
+
+/* -----------Medium----------- */
+@media (min-width: 767px) and (max-width: 1023.99px){
+
+#aboutMe p{
+    max-width: 740px;
+    min-width: 650px;
+}
+
+.center{
+    min-width: 650px;
+    max-width: 900px
+} 
+
+#icons img{
+    max-width: 70px;
+}
+}
+
+/* -----------Large----------- */
+@media (min-width: 1024px){
+    .center{
+        max-width: 100%;
+    } 
+
+    #aboutMe p{
+        max-width: 740px;
+    }
+    #icons img{
+        max-width: 95px;
+    }
+    #icons figure{
+        padding: 10px 30px;
+    }
 }
